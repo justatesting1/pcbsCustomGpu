@@ -1,4 +1,4 @@
-# pcbsCustomGpu
+# Description
 An improved version of GPU.py for PC Building Simulator.
 # How to get unitypatcher
 Download unitypatcher from this GitHub repository: https://github.com/synogen/unitypatcher/releases
