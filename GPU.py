@@ -42,11 +42,20 @@ _perD=str(int(int(_perS)*float(_per)))
 
 _sliFlag=False
 while not _sliFlag:
-    _sli=input("SLI? (Yes, No) ").lower()
+    _sli=input("SLI? (Yes, No) (AKA Double GPUs) ").lower()
     if _sli == "yes" or _sli == "no":
         _sliFlag=True
     else:
         print("Choose one of the options")
+_sli = _sli[0].upper() + _sli[1:]
+
+_inShop=False
+while not _inShop:
+    _inGameShop=input("Will this item be in the game shop?? (Yes, No) ").lower()
+    if _inGameShop == "yes" or _inGameShop == "no":
+        _inGameShop=True
+    else:
+        print("Choose one of the options.")
 _sli = _sli[0].upper() + _sli[1:]
 
 _temp=check("Enter the Start Temperature ")
@@ -75,7 +84,7 @@ text="""GPU
 		<td div="Manufacturer">"""+_man+"""</td>
 		<td div="ID">"""+_id+"""</td>
 		<td div="Part Name">"""+_name+"""</td>
-		<td div="In Game">Yes</td>
+		<td div="In Game">"""+_inGameShop+"""</td>
 		<td div="Imported to Game">Yes</td>
 		<td div="Working in game">Yes</td>
 		<td div="In Shop">Yes</td>
@@ -134,8 +143,13 @@ bat="""
 cls
 echo Applying mod patch...
 cd unitypatcher
+SET "PATH="
+SET /P "PATH=>"
+echo Type the PC Building Simulator path and press enter. Use DOUBLE slashes (\\) or it won't work!
+pause
+SET "PCBSPATH=%PATH%"
 echo -------------------------
-call unitypatcher patch D:\\Users\\OldBo5\\PCBS\\PCBS_Data\\sharedassets1.assets "..\_"""+_name+""".asset.txt"
+call unitypatcher patch %PATH%\\PCBS_Data\\sharedassets1.assets "..\_"""+_name+""".asset.txt"
 echo If patching was successful you can run the game now!
 echo -------------------------
 echo Modified by me to suit my needs.
