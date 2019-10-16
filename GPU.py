@@ -49,15 +49,6 @@ while not _sliFlag:
         print("Choose one of the options")
 _sli = _sli[0].upper() + _sli[1:]
 
-_inShop=False
-while not _inShop:
-    _inGameShop=input("Will this item be in the game shop?? (Yes, No) ").lower()
-    if _inGameShop == "yes" or _inGameShop == "no":
-        _inGameShop=True
-    else:
-        print("Choose one of the options.")
-_sli = _sli[0].upper() + _sli[1:]
-
 _temp=check("Enter the Start Temperature ")
 _throw=check("Enter the Temperature at which Thermal Throttling starts ")
 _maxcore=check("Enter the max core clock freq ")
@@ -87,7 +78,7 @@ text="""GPU
 		<td div="In Game">Yes</td>
 		<td div="Imported to Game">Yes</td>
 		<td div="Working in game">Yes</td>
-		<td div="In Shop">"""+_inGameShop+"""</td>
+		<td div="In Shop">Yes</td>
 		<td div="Price">"""+_price+"""</td>
 		<td div="SellPrice">"""+_sell+"""</td>
 		<td div="Level">"""+_level+"""</td>
