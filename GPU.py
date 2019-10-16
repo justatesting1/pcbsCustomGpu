@@ -152,7 +152,6 @@ echo -------------------------
 call unitypatcher patch %PATH%\\PCBS_Data\\sharedassets1.assets "..\_"""+_name+""".asset.txt"
 echo If patching was successful you can run the game now!
 echo -------------------------
-echo Modified by me to suit my needs.
 pause
 """
 
